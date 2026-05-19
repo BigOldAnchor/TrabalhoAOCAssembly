@@ -1,9 +1,9 @@
 .data
-    	entrada:  .asciiz "\nInsira um numero (0 para sair): "
+    	entrada:  .asciiz "\nInsira um número (0 para sair): "
     	fimPrograma:  .asciiz "\nPrograma encerrado.\n"
-    	ehPalindromo: .asciiz "O numero eh palindromo.\n"
-    	naoEh: .asciiz "O numero nao eh palindromo.\n"
-    	maisProximo: .asciiz "O palindromo mais proximo eh: \n "
+    	ehPalindromo: .asciiz "O numero é palíndromo.\n"
+    	naoEh: .asciiz "O numero nao é palíndromo.\n"
+    	maisProximo: .asciiz "O palindromo mais proximo é: \n "
     	erro: .asciiz "Insira valores maiores que 1 e menores que 10000.\n"
 .text
 Main:
@@ -78,7 +78,7 @@ ImprimeProximo:
     	la $a0, maisProximo
     	syscall
     	li $v0, 1
-    	move $a0, $s4 #	Número palíndromo mais próximo.
+    	add $a0, $s4, $zero #	Número palíndromo mais próximo.
     	syscall
     	j Enquanto
 
