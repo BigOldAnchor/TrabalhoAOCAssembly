@@ -53,11 +53,11 @@ NaoEhPalindromo:	# Inicia processo de procurar o palíndromo mais próximo
     	li $v0, 4
     	la $a0, naoEh		# Imprime mensagem de que o número inserido não é palíndromo.
     	syscall
-	add $s4, $t0, $zero	# s4 = entrada
+		add $s4, $t0, $zero	# s4 = entrada
 
 BuscaPalindromo: 	# Loop que ocorre inversamente para busca
-	subi $s4, $s4, 1		# s4 -= 1
-   	add $s0, $s4, $zero	# s0 = número original
+		subi $s4, $s4, 1		# s4 -= 1
+   		add $s0, $s4, $zero	# s0 = número original
     	li $s1, 0				# s1 = número invertido
 
 LoopBusca:			# A lógica é a mesma do LoopInverte...
@@ -73,7 +73,7 @@ ComparaBusca:
     	j BuscaPalindromo				# Caso contrário, retorna ao loop de busca
 
 ImprimeProximo: 
-	# O número palíndromo mais próximo é:
+		# O número palíndromo mais próximo é:
     	li $v0, 4
     	la $a0, maisProximo
     	syscall
@@ -83,7 +83,7 @@ ImprimeProximo:
     	j Enquanto
 
 Saida: 
-	# Programa encerrado
+		# Programa encerrado
     	li $v0, 4
     	la $a0, fimPrograma
     	syscall
